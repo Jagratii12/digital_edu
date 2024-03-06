@@ -1,0 +1,64 @@
+.pregroup {
+  width: 100%;
+  height: 100vh;
+  background-color: #ebfaff;
+  margin-top: 40px;
+}
+
+.h-pregroup {
+  text-align: center;
+  padding-top: 40px;
+  color: #ff4955;
+  font-size: 18px;
+}
+
+.image-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.image-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+.preloaded-image {
+  width: calc(
+    10% - 5px
+  ); /* 25% of the parent container's width with margin included */
+  height: calc(10vw - 5px); /* Maintain square aspect ratio */
+  margin: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preloaded-image img {
+  width: 65%;
+  height: 65%;
+  display: block;
+  margin: auto;
+}
+
+
+/* CSS for Tablet screens */
+/* 
+@media (min-width: 760px) {
+  .pregroup {
+    margin-top: 0px;
+    background-image: url("../../assets/group.png");
+    background-size: fit; /* Adjust background size */
+/* background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+} */

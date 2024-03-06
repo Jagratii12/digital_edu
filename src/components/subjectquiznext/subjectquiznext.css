@@ -1,0 +1,177 @@
+.subjectquiz {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+  text-align: center;
+}
+
+.quiz-section {
+  flex: 1;
+  margin-right: 20px; /* Adjust gap between sections */
+}
+
+.heading-row {
+  margin-bottom: 10px;
+  margin-left: 20%;
+  color: #00a4d8;
+  margin-top: 10%;
+  font-family: Readex Pro;
+  font-size: 26px;
+}
+.heading-row2 {
+  color: #ff4955;
+  margin-top: 10%;
+  font-family: Readex Pro;
+  font-size: 26px;
+}
+
+.radio-row {
+  display: flex;
+  flex-direction: column; /* Change to column to display in separate rows */
+  color: #636363;
+}
+.radio-row2 {
+  display: flex;
+  flex-direction: column; /* Change to column to display in separate rows */
+  color: #636363;
+}
+.radio-row p {
+  margin-bottom: 10px; /* Adjust spacing between heading and radio buttons */
+  color: #686868;
+}
+.radio-row2 p {
+  margin-bottom: 10px; /* Adjust spacing between heading and radio buttons */
+  color: #686868;
+}
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+.checkboxes2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  margin-right: 20px;
+  font-size: 12px;
+}
+.checkbox2 {
+  margin-right: 20px;
+}
+
+.chapter-wise {
+  margin-right: 0;
+}
+.chapter-wise2 {
+  margin-right: 0;
+}
+.accordion-item {
+  margin-bottom: 10px;
+  position: relative; /* Add position relative for absolute positioning */
+}
+
+.accordion-button {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 50%;
+  text-align: left;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  position: absolute; /* Change to absolute positioning */
+  top: 100%; /* Position it below the accordion button */
+  left: 0;
+  width: 46%; /* Stretch accordion to fill width */
+  background-color: #ae2f2f; /* Optional: Add a background color */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  z-index: 1; /* Ensure it appears above other content */
+}
+
+.accordion-item.open .accordion-content {
+  display: block;
+}
+
+.radio-option {
+  margin-bottom: 5px;
+}
+.accordion-icon {
+  font-size: 25px;
+  color: white; /* Set color to white */
+  transition: transform 0.3s ease; /* Add transition for smooth rotation */
+}
+
+/* Styling for the arrow icon when accordion is open */
+.accordion-icon.open {
+  transform: rotate(135deg);
+}
+/* subjectquiznext.css */
+
+.accordion-button-1 {
+  background-color: #ff4955;
+}
+
+.accordion-button-2 {
+  background-color: #3ebe42;
+}
+
+.accordion-button-3 {
+  background-color: #00a4d8;
+}
+
+.accordion-button-4 {
+  background-color: #fea404;
+}
+
+.accordion-button-5 {
+  background-color: #ff4955;
+}
+
+/* Different colors for chapter-wise accordion buttons */
+.accordion-button-6 {
+  background-color: #00a4d8;
+}
+
+.accordion-button-7 {
+  background-color: #ff4955;
+}
+
+.accordion-button-8 {
+  background-color: #fea404;
+}
+
+.accordion-button-9 {
+  background-color: #00a4d8;
+}
+
+.accordion-button-10 {
+  background-color: #3ebe42;
+}
+.accordion-content button {
+  background-color: #00a4d8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* subjectquiznext.css */
+
+/* Add styles for the arrow icon */
+.accordion-button img {
+  width: 8px; /* Adjust size as needed */
+  height: 16px; /* Adjust size as needed */
+  margin-left: 10px; /* Adjust spacing as needed */
+}
+
+/* Add styles for the arrow icon when accordion is open */
+.accordion-item.open .accordion-button img {
+  transform: rotate(360deg); /* Rotate the arrow icon when accordion is open */
+  width: 14px; /* Adjust size as needed */
+  height: 10px;
+}

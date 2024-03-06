@@ -1,0 +1,88 @@
+.eval {
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+  margin-top: 40px;
+  color: #686868;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.eval-head {
+  color: #545454;
+  font-size: 14px;
+}
+
+.eval-cards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.eval-quiz,
+.eval-exam,
+.eval-assessment {
+  width: 22%;
+  height: 50vh;
+  background-color: white;
+  border: 1px solid #eaeef2;
+  margin-top: 2%;
+  border-radius: 5px;
+}
+
+.card-content {
+  text-align: center;
+  padding: 20px;
+}
+.card-content h2 {
+  color: #00a4d8;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  text-align: left;
+  margin-top: 20px;
+}
+.card-content p {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  color: #686868;
+  font-weight: 100;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.card-image {
+  width: 100%;
+  height: 20vh;
+  /* padding: 0;
+  margin: 0; */
+  justify-content: center;
+}
+
+
+.learn-more-btn {
+  display: flex; /* Add flexbox display */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin-top: 40px;
+  margin-right: 58%;
+  padding: 5px 10px;
+  background-color: white;
+  border: 1px solid #ff4955;
+  color: #ff4955;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.learn-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.learn-more-btn img {
+  margin-left: 5px; /* Adjust if needed */
+  height: 12%;
+  width: 12%;
+}
+
+.eval-assessment .learn-more-btn {
+  margin-top: 28px;
+}

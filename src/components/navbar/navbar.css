@@ -1,0 +1,81 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+  padding: 5px 5px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 7vmin; /* Adjust the height as per your logo */
+}
+
+.navbar-menu ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu li {
+  margin-right: 20px;
+}
+
+.navbar-menu ul li a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  font-family: "Readex Pro", sans-serif;
+}
+
+/* Login Button */
+.login-btn-header {
+  background-color: #ff4955; /* Red color */
+  padding: 9px 20px;
+  border-radius: 0px;
+  font-size: 12px;
+  border: none;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.login-btn-header {
+  text-decoration: none;
+  color: #ffffff; /* White color */
+}
+
+.login-btn-header:hover {
+  background-color: #e5414c; /* Darker red color on hover */
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 10px;
+  }
+  .navbar-menu {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navbar-menu ul li a {
+    font-size: 9px;
+  }
+}
+
+/* Laptop Styles */
+@media (min-width: 1025px) {
+  .navbar-container {
+    padding: 0 40px;
+  }
+
+  .navbar-menu ul li {
+    margin-right: 25px;
+  }
+}
