@@ -48,6 +48,10 @@
   font-weight: 600;
   color: #545454;
   margin-top: 10px;
+  
+}
+.tablet-paragraph {
+  display: none;
 }
 .api-slider {
   margin: 30px 40px;
@@ -55,7 +59,6 @@
   justify-content: space-between;
   transition: transform 0.5s ease-in-out;
 }
-
 
 .notice-box-container,
 .notice-box-container2 {
@@ -90,9 +93,7 @@
 }
 
 .dateBox2 {
-  
   background-color: #ffefb9;
-  
 }
 
 .noticeBox,
@@ -102,8 +103,42 @@
   border-radius: 5px;
 }
 .second-box {
-  background-color: #FFF7DD;
+  background-color: #fff7dd;
 }
-.different-color{
-  background-color: #FFEFB9;
+.different-color {
+  background-color: #ffefb9;
+}
+@media only screen and (min-width: 760px) and (max-width: 1024px) {
+  .hero-board {
+    height: 70vh; /* Adjusted height for tablet and laptop */
+  }
+  .top-board-container p {
+    font-size: 24px;
+  }
+  .top-board-container button {
+    font-size: 12px;
+    padding: 8px 20px;
+  }
+  .notice-board-container {
+    width: 80%; /* Adjusted width for tablet and laptop */
+  }
+  /* .subheading-para-board {
+    display: none;
+  } */
+  .api-slider {
+    margin: 20px 30px; /* Adjusted margin for tablet and laptop */
+  }
+
+  .notice-box-container,
+  .notice-box-container2 {
+    width: 48%; /* Adjusted width for tablet and laptop */
+  }
+}
+@media only screen and (min-width: 760px) and (max-width: 1024px) {
+  .tablet-paragraph {
+    font-size: 12px;
+  font-weight: 600;
+  color: #545454;
+  display: block;
+  }
 }

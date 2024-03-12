@@ -55,6 +55,13 @@
   .org {
     height: 200px;
   }
+  .orghead {
+    margin-top: 0;
+    font-family: "Readex Pro", sans-serif;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+  }
   .orgheading h3 {
     font-size: 40px;
     margin-top: 6px;

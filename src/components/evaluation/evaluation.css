@@ -6,6 +6,7 @@
   color: #686868;
   font-weight: 100;
   font-size: 18px;
+  position: relative;
 }
 
 .eval-head {
@@ -19,11 +20,9 @@
   justify-content: center;
 }
 
-.eval-quiz,
-.eval-exam,
-.eval-assessment {
+.eval-card {
   width: 22%;
-  height: 50vh;
+  height: auto;
   background-color: white;
   border: 1px solid #eaeef2;
   margin-top: 2%;
@@ -34,6 +33,7 @@
   text-align: center;
   padding: 20px;
 }
+
 .card-content h2 {
   color: #00a4d8;
   font-family: Inter, sans-serif;
@@ -41,6 +41,7 @@
   text-align: left;
   margin-top: 20px;
 }
+
 .card-content p {
   font-family: Inter, sans-serif;
   font-size: 11px;
@@ -52,19 +53,14 @@
 
 .card-image {
   width: 100%;
-  height: 20vh;
-  /* padding: 0;
-  margin: 0; */
-  justify-content: center;
+  height: auto;
 }
 
-
 .learn-more-btn {
-  display: flex; /* Add flexbox display */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 40px;
-  margin-right: 58%;
   padding: 5px 10px;
   background-color: white;
   border: 1px solid #ff4955;
@@ -73,16 +69,125 @@
   font-size: 14px;
 }
 
-.learn-more-btn:hover {
-  background-color: #0056b3;
-}
-
 .learn-more-btn img {
-  margin-left: 5px; /* Adjust if needed */
-  height: 12%;
-  width: 12%;
+  margin-left: 5px;
+  height: 12px;
+  width: 12px;
 }
 
-.eval-assessment .learn-more-btn {
-  margin-top: 28px;
+.arrow-buttons {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.arrow-left,
+.arrow-right {
+  background-color: #ff4955;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0px;
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+}
+
+.arrow-left {
+  position: absolute;
+  left: 10vw;
+}
+
+.arrow-right {
+  position: absolute;
+  right: 10vw;
+}
+.arrow-buttons button img {
+  width: 10px;
+  height: 18px;
+}
+/* For tablets (landscape) and laptops */
+@media only screen and (min-width: 760px) and (max-width: 1024px) {
+  .eval {
+    margin-top: 20px; /* Reduce top margin */
+    position: relative; /* Add relative positioning */
+    font-size: 16px;
+  }
+  .eval-head {
+    color: #545454;
+    font-size: 10px;
+  }
+  .eval-cards {
+    flex-wrap: wrap; /* Allow cards to wrap */
+    gap: 15px; /* Reduce gap between cards */
+  }
+
+  .eval-card {
+    width: 25%; /* Adjust card width */
+    margin-top: 2%; /* Adjust top margin */
+    position: relative; /* Add relative positioning */
+  }
+
+  .card-content h2 {
+    font-size: 16px; /* Decrease font size */
+  }
+
+  .card-content p {
+    font-size: 10px; /* Decrease font size */
+    margin-bottom: 40px; /* Add bottom margin to create space for button */
+  }
+
+  .learn-more-btn {
+    display: inline-block; /* Make the button inline-block */
+    margin-top: 20px; /* Adjust top margin */
+    margin-left: 10px; /* Position to the left */
+    padding: 5px 8px; /* Adjust padding */
+    background-color: white; /* Match button background color */
+    border: 1px solid #ff4955; /* Match button border */
+    color: #ff4955; /* Match button text color */
+    font-size: 12px; /* Decrease font size */
+    cursor: pointer;
+    position: absolute; /* Add absolute positioning */
+    bottom: 10px; /* Position at the bottom */
+    left: 10px; /* Position to the left */
+  }
+
+  .arrow-buttons {
+    position: absolute;
+    top: 38%; /* Center vertically */
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  .arrow-left {
+    background-color: #ff4955;
+    border: none;
+    font-size: 24px; /* Maintain arrow size */
+    cursor: pointer;
+    padding: 0px;
+    height: 35px; /* Maintain arrow size */
+    width: 35px; /* Maintain arrow size */
+    border-radius: 100%;
+    position: absolute; /* Maintain absolute positioning */
+    left: 56px;
+  }
+
+  .arrow-right {
+    background-color: #ff4955;
+    border: none;
+    font-size: 24px; /* Maintain arrow size */
+    cursor: pointer;
+    padding: 0px;
+    height: 35px; /* Maintain arrow size */
+    width: 35px; /* Maintain arrow size */
+    border-radius: 100%;
+    position: absolute; /* Maintain absolute positioning */
+    right: 56px; /* Position to the right */
+  }
+
+  .arrow-buttons button img {
+    width: 10px; /* Maintain arrow icon size */
+    height: 18px; /* Maintain arrow icon size */
+  }
 }

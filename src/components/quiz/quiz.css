@@ -46,10 +46,10 @@
 }
 
 select {
-  -webkit-appearance: none; /* Webkit browsers */
-  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  padding: 11px 2px 11px 38px;
+  padding: 12px 2px 12px 38px;
   color: #a0a7aa;
   background-color: white;
   border: none;
@@ -88,7 +88,7 @@ select:focus {
   background-size: cover;
 }
 
-input[type="text"] {
+.search-bar-quiz-input {
   background: #fff;
   font-size: 14px;
   font-family: Inter, sans-serif;
@@ -148,7 +148,6 @@ input[type="text"] {
   border-radius: 5px;
 }
 
-
 @media (min-width: 760px) and (max-width: 1024px) {
   .mhead {
     margin-top: 15px;
@@ -178,7 +177,7 @@ input[type="text"] {
     height: 16px;
   }
 
-  input[type="text"] {
+  .search-bar-quiz-input {
     background: #fff;
     font-size: 12px;
     font-family: Inter, sans-serif;
@@ -221,5 +220,64 @@ input[type="text"] {
   .icon34 img {
     width: 20px;
     height: 20px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1080px) {
+  .dropdown-container {
+    position: relative;
+    width: 50%;
+    left: -80px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  select {
+    padding: 17px 2px 8px 38px;
+  }
+  .dropdown-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust left position for icon */
+    /* right: -10px; */
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/magnify.png");
+    background-size: cover;
+  }
+
+  .search-bar-quiz-input {
+    background: #fff;
+    font-size: 12px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    border: none;
+    border-color: transparent;
+    padding: 10px 50px 10px 38px;
+    background: url("../../assets/magnify.png") no-repeat 10px center;
+    background-size: 20px;
+    background-color: white;
+    position: absolute;
+    left: 42%;
+    margin-left: 1%;
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+  }
+
+  .search-bar-btn {
+    background: #ff4955;
+    color: #fff;
+    border: none;
+    padding: 12px 38px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 74%;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Inter, sans-serif;
   }
 }

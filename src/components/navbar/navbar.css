@@ -23,7 +23,7 @@
 }
 
 .navbar-menu li {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .navbar-menu ul li a {
@@ -35,7 +35,6 @@
   font-family: "Readex Pro", sans-serif;
 }
 
-/* Login Button */
 .login-btn-header {
   background-color: #ff4955; /* Red color */
   padding: 9px 20px;
@@ -60,22 +59,56 @@
     padding: 0 10px;
   }
   .navbar-menu {
-    width: 75%;
+    width: 80%;
     display: flex;
     justify-content: flex-end;
   }
   .navbar-menu ul li a {
-    font-size: 9px;
+    font-size: 10px;
+  }
+  .login-btn-header {
+    background-color: #ff4955;
+    padding: 8px 16px;
+    border-radius: 0px;
+    font-size: 10px;
+    border: none;
+    font-family: "Readex Pro", sans-serif;
+  }
+
+  .login-btn-header {
+    text-decoration: none;
+    color: #ffffff;
   }
 }
 
 /* Laptop Styles */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .navbar-container {
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
-  .navbar-menu ul li {
+  .navbar-menu ul li a {
     margin-right: 25px;
+  }
+  .navbar-menu {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navbar-menu ul li a {
+    font-size: 12px;
+  }
+  .login-btn-header {
+    background-color: #ff4955;
+    padding: 8px 16px;
+    border-radius: 0px;
+    font-size: 12px;
+    border: none;
+    font-family: "Readex Pro", sans-serif;
+  }
+
+  .login-btn-header {
+    text-decoration: none;
+    color: #ffffff;
   }
 }

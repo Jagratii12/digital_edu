@@ -9,20 +9,12 @@ const dummyNotices = [
   { date: "Feb 10", content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." }
 ];
 
-// Simulated API function to fetch data
-// const fetchData = async () => {
-//   // Simulate API call delay
-//   await new Promise(resolve => setTimeout(resolve, 1000));
-//   return dummyNotices;
-// };
-
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [notices, setNotices] = useState([]);
 
   useEffect(() => {
-    // Simulating API call
-    // fetchData().then(data => setNotices(data));
+    
     setNotices(dummyNotices);
   }, []);
 
@@ -38,12 +30,16 @@ const Carousel = () => {
           <button className="btn-board">View all Notices</button>
         </div>
         <div className="subheading-para-board">
-          <p>
+          <p className="noticeboard-para">
             It is an exceptional online test platform for conducting online
             exams and solving all your preparation doubts. It is a smooth online
-            examination system to use and
-            <br /> enhances the flow of information.
+            examination system to use and enhances the flow of information.
           </p>
+          {/* <p className="tablet-paragraph">
+            It is an exceptional online test platform for conducting online
+            exams and solving all your preparation doubts. It is a smooth online
+            examination system to use and<br/> enhances the flow of information.
+          </p> */}
         </div>
         <div className="api-slider">
           {notices.slice(activeIndex, activeIndex + 2).map((notice, idx) => (

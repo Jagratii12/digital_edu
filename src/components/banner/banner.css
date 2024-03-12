@@ -42,10 +42,15 @@
   }
 
   .icon-banner {
-    margin-right: 30px; /* Adjusted margin for smaller screens */
+    margin-right: 20px; /* Adjusted margin for smaller screens */
   }
 
   .icon-banner span {
     font-size: 10px; /* Adjusted font size for smaller screens */
+  }
+  .icon-banner img {
+    width: 12px;
+    height: 12px;
+    padding-right: 7px;
   }
 }

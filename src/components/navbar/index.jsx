@@ -1,8 +1,9 @@
+// Navbar.js
 import React from 'react';
 import "./navbar.css"; // Import your CSS file for styling
 import Logo from "../../assets/logo.png";
 
-const Navbar = ({ onloginClick }) => {
+const Navbar = ({ onLoginClick }) => {
   return ( 
     <nav className="navbar">
       <div className="navbar-container">
@@ -17,10 +18,9 @@ const Navbar = ({ onloginClick }) => {
             <li><a href="#government-services">Government Services</a></li>
             <li><a href="#competitive-exams">Competitive Exams</a></li>
             <li><a href="#rewards">Rewards</a></li>
-          <button className='login-btn-header' onClick={ ()=> {onloginClick()}}>LOGIN</button>
+            <button className='login-btn-header' onClick={onLoginClick}>LOGIN</button>
           </ul>
         </div>
-        
       </div>
     </nav>
   );

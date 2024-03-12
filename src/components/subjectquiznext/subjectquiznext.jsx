@@ -1,47 +1,55 @@
 import React, { useEffect, useState } from "react";
-import downarrow from "../../assets/downarrow.png";
-import downarrow2 from "../../assets/downarrow2.png";
 import "./subjectquiznext.css";
 
-const Accordion = ({ title, options, index }) => {
+// Accordion component
+const Accordion = ({ title, options, index, isOpen, toggleAccordion }) => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleOptionChange = (event) => {
+    console.log("radio button clicked");
     setSelectedOption(event.target.value);
   };
 
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
+  // Function to generate color based on index
+  const getColor = (index) => {
+    const colors = ["#ff5733", "#ffa933", "#33ff57", "#339cff", "#cc33ff"];
+    return colors[index % colors.length];
   };
 
   return (
     <div className={`accordion-item ${isOpen ? "open" : ""}`}>
       <button
         className={`accordion-button accordion-button-${index}`}
+        style={{
+          backgroundColor: getColor(index), 
+          borderRadius: isOpen ? "5px 5px 0 0" : "5px", // Adjust border-radius when open
+        }}
         onClick={toggleAccordion}
       >
-        {title}
-        <img src={isOpen ? downarrow : downarrow2} alt="Down arrow" />
+        <div className="accordion-title-container">
+        {title}</div>
+        {/* Use Font Awesome right angle icon */}<div className="accordion-btn-icon">
+        <i className={`fas fa-angle-${isOpen ? "down" : "right"}`}></i></div>
       </button>
       {isOpen && (
         <div className="accordion-content">
           <div className="radio-options">
-            {options.map((option, index) => (
-              <div className="radio-option" key={index}>
+            {options.map((option, idx) => (
+              <div className="radio-option" key={idx}>
                 <input
                   type="radio"
-                  id={`option-${index}`}
+                  id={`option-${idx}-${title}`}
                   name={`option-${title}`}
                   value={option.value}
-                  checked={selectedOption === option.value}
+                  // checked={selectedOption === option.value}
                   onChange={handleOptionChange}
                 />
-                <label htmlFor={`option-${index}`}>{option.label}</label>
+                <label htmlFor={`option-${idx}-${title}`}>{option.label}</label>
               </div>
             ))}
           </div>
           <button
+            className="start-exam-button"
             onClick={() =>
               console.log(`Selected option for ${title}: ${selectedOption}`)
             }
@@ -54,67 +62,23 @@ const Accordion = ({ title, options, index }) => {
   );
 };
 
+// Main component
 const Subjectquiznext = () => {
   const [accordionData, setAccordionData] = useState([]);
+  const [openIndex, setOpenIndex] = useState(null);
 
   // Simulate fetching data from an API
   useEffect(() => {
     // Fetch data from an API endpoint
     const fetchData = async () => {
       // Mock data
-      const dataFromApi = [
-        {
-          title: "Accordion 1",
-          options: [
-            { label: "10 questions", value: 10 },
-            { label: "20 questions", value: 20 },
-            { label: "30 questions", value: 30 },
-            { label: "40 questions", value: 40 },
-            { label: "50 questions", value: 50 },
-          ],
-        },
-        {
-          title: "Accordion 2",
-          options: [
-            { label: "10 questions", value: 10 },
-            { label: "20 questions", value: 20 },
-            { label: "30 questions", value: 30 },
-            { label: "40 questions", value: 40 },
-            { label: "50 questions", value: 50 },
-          ],
-        },
-        {
-          title: "Accordion 3",
-          options: [
-            { label: "10 questions", value: 10 },
-            { label: "20 questions", value: 20 },
-            { label: "30 questions", value: 30 },
-            { label: "40 questions", value: 40 },
-            { label: "50 questions", value: 50 },
-          ],
-        },
-        {
-          title: "Accordion 4",
-          options: [
-            { label: "10 questions", value: 10 },
-            { label: "20 questions", value: 20 },
-            { label: "30 questions", value: 30 },
-            { label: "40 questions", value: 40 },
-            { label: "50 questions", value: 50 },
-          ],
-        },
-        {
-          title: "Accordion 5",
-          options: [
-            { label: "10 questions", value: 10 },
-            { label: "20 questions", value: 20 },
-            { label: "30 questions", value: 30 },
-            { label: "40 questions", value: 40 },
-            { label: "50 questions", value: 50 },
-          ],
-        },
-        // Add more accordion data if needed
-      ];
+      const dataFromApi = Array.from({ length: 5 }, (_, i) => ({
+        title: `Accordion ${i + 1}`,
+        options: Array.from({ length: 5 }, (_, j) => ({
+          label: `${10 * (j + 1)} questions`,
+          value: 10 * (j + 1),
+        })),
+      }));
 
       setAccordionData(dataFromApi);
     };
@@ -122,119 +86,89 @@ const Subjectquiznext = () => {
     fetchData();
   }, []);
 
-  return (
-    <div className="subjectquiz">
-      <div className="quiz-section">
-        <div className="heading-row">
-          <h5>Subject Wise Quiz</h5>
-        </div>
-        <div className="radio-row">
-          <p>Select difficulty level</p>
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
-          <div className="checkboxes">
-            <div className="checkbox">
-              <input
-                type="radio"
-                id="basic"
-                name="difficulty"
-                value="Basic (L1)"
-              />
-              <label htmlFor="basic">Basic (L1)</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="radio"
-                id="medium"
-                name="difficulty"
-                value="Medium (L2)"
-              />
-              <label htmlFor="medium">Medium (L2)</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="radio"
-                id="high"
-                name="difficulty"
-                value="High (L3)"
-              />
-              <label htmlFor="high">High (L3)</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="radio"
-                id="miscellaneous"
-                name="difficulty"
-                value="Miscellaneous (L4)"
-              />
-              <label htmlFor="miscellaneous">Miscellaneous (L4)</label>
-            </div>
+  return (
+    <div className="subject-quiz">
+      <div className="wrapper-quiz-box">
+        <div className="quiz-section">
+          <div className="heading-row">
+            <h5>Subject Wise Quiz</h5>
           </div>
-          <div className="accordion">
-            {accordionData.map((accordion, index) => (
-              <Accordion
-                key={index}
-                title={accordion.title}
-                options={accordion.options}
-                index={index + 1} // Add 1 to make the index 1-based
-              />
-            ))}
+          <div className="radio-row">
+            <p>Select Difficulty Level:</p>
+            <div className="checkboxes">
+              {[
+                "Basic (L1)",
+                "Medium (L2)",
+                "High (L3)",
+                "Miscellaneous (L4)",
+              ].map((level, index) => (
+                <div className="checkbox" key={index}>
+                  <input
+                    type="radio"
+                    id={`level-${index}`}
+                    name="difficulty"
+                    value={level}
+                  />
+                  <label htmlFor={`level-${index}`}>{level}</label>
+                </div>
+              ))}
+            </div>
+            <div className="accordion">
+              {accordionData.map((accordion, index) => (
+                <Accordion
+                  key={index}
+                  title={accordion.title}
+                  options={accordion.options}
+                  index={index + 1} // Add 1 to make the index 1-based
+                  isOpen={openIndex === index + 1}
+                  toggleAccordion={() => toggleAccordion(index + 1)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      <div className="quiz-section chapter-wise">
-        <div className="heading-row2">
-          <h5>Chapter Wise Quiz</h5>
-        </div>
-        <div className="radio-row2">
-          <p>Select difficulty level</p>
-
-          <div className="checkboxes2">
-            <div className="checkbox23">
-              <input
-                type="radio"
-                id="basic-chapter"
-                name="difficulty-chapter"
-                value="Basic (L1)"
-              />
-              <label htmlFor="basic-chapter">Basic (L1)</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="radio"
-                id="medium-chapter"
-                name="difficulty-chapter"
-                value="Medium (L2)"
-              />
-              <label htmlFor="medium-chapter">Medium (L2)</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="radio"
-                id="high-chapter"
-                name="difficulty-chapter"
-                value="High (L3)"
-              />
-              <label htmlFor="high-chapter">High (L3)</label>
-            </div>
-            <div className="checkbox">
-              <input
-                type="radio"
-                id="miscellaneous-chapter"
-                name="difficulty-chapter"
-                value="Miscellaneous (L4)"
-              />
-              <label htmlFor="miscellaneous-chapter">Miscellaneous (L4)</label>
-            </div>
+      <div className="wrapper-quiz-box2">
+        <div className="quiz-section chapter-wise">
+          <div className="heading-row2">
+            <h5>Chapter Wise Quiz</h5>
           </div>
-          <div className="accordion">
-            {accordionData.map((accordion, index) => (
-              <Accordion
-                key={index}
-                title={accordion.title}
-                options={accordion.options}
-                index={index + 6} // Add 6 to make the index unique
-              />
-            ))}
+          <div className="radio-row2">
+            <p>Select Difficulty Level:</p>
+            <div className="checkboxes2">
+              {[
+                "Basic (L1)",
+                "Medium (L2)",
+                "High (L3)",
+                "Miscellaneous (L4)",
+              ].map((level, index) => (
+                <div className="checkbox" key={index}>
+                  <input
+                    type="radio"
+                    id={`level-chapter-${index}`}
+                    name="difficulty-chapter"
+                    value={level}
+                  />
+                  <label htmlFor={`level-chapter-${index}`}>{level}</label>
+                </div>
+              ))}
+            </div>
+            <div className="accordion">
+              {accordionData.map((accordion, index) => (
+                <Accordion
+                  key={index}
+                  title={accordion.title}
+                  options={accordion.options}
+                  index={index + 6} // Add 6 to make the index unique
+                  isOpen={openIndex === index + 6}
+                  toggleAccordion={() => toggleAccordion(index + 6)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

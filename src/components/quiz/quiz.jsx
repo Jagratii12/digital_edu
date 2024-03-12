@@ -60,16 +60,17 @@ const Quiz = () => {
               ))}
             </select>
           </div>
-          {/* Search bar */}
+         
           <div className="search-bar-quiz">
             <input
+              className="search-bar-quiz-input"
               type="text"
               placeholder="Search for Quizzes or Exams"
               value={searchTerm}
               onChange={handleSearch}
             />
           </div>
-          {/* Search button */}
+         
           <div className="search-bar-btn-div">
             <button
               className="search-bar-btn"

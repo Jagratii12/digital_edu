@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./nextpage.css";
-import Navbar from "../../components/navbar/index";
 import Assessmentnext from "../../components/assessmentnext/assessmentnext";
 import Subjectquiznext from "../../components/subjectquiznext/subjectquiznext";
 import Support from "../../components/support/support";
@@ -14,7 +13,7 @@ const Nextpage = () => {
   
   return (
     <div>
-      <Navbar  onloginClick={ ()=> {setshowlogin(true)}}/>
+      {/* <Navbar  onloginClick={ ()=> {setshowlogin(true)}}/> */}
       <Assessmentnext />
       <Subjectquiznext />
       <Support />

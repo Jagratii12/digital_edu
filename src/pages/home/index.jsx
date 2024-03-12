@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "./home.css";
-import Navbar from "../../components/navbar/index";
 import Assessment from "../../components/assessment/assessment";
 import Banner from "../../components/banner/banner";
 import Carousel from "../../components/carousel/carousel";
@@ -13,21 +12,14 @@ import Organisation from "../../components/organisation/organisation";
 import Reviews from "../../components/reviews/reviews";
 import Onlinetest from "../../components/onlinetest/onlinetest";
 import Footer from "../../components/footer/footer";
-import Login from "../../components/login/login";
 import Quicklinks from "../../components/quicklinks/quicklinks";
 
-
-
 const Home = () => {
-  const [showlogin, setshowlogin] = useState(false);
-  
   return (
     <div>
-      <Navbar onloginClick={ ()=> {setshowlogin(true)}} />
       <Assessment />
       <Banner />
       <Carousel />
-
       <Quiz />
       <Quizcard />
       <Preloaded />
@@ -36,14 +28,10 @@ const Home = () => {
       <Organisation />
       <Reviews />
       <Onlinetest />
-
       <Footer />
       <Quicklinks />
-      
-      { !showlogin ? null : <Login></Login>
-        
-      }
     </div>
   );
 };
+
 export default Home;

@@ -88,3 +88,62 @@
   margin-top: 10px;
   margin-left: 10px;
 }
+@media screen and (min-width: 760px) {
+  .review-container {
+    width: 80%; /* Adjust width of the review container */
+  }
+
+  .main-content-review {
+    font-size: 16px; /* Increase font size of main content */
+  }
+
+  .reviewer-name {
+    font-size: 18px; /* Increase font size of reviewer name */
+    margin-top: 15px; /* Adjust top margin */
+  }
+
+  .profile-image-review img {
+    height: 250px; /* Increase height of profile image */
+    width: 250px; /* Increase width of profile image */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .review-container {
+    width: 70%; /* Adjust width of the review container */
+  }
+
+  .main-content-review {
+    font-size: 18px; /* Increase font size of main content */
+  }
+
+  .reviewer-name {
+    font-size: 20px; /* Increase font size of reviewer name */
+    margin-top: 10px; /* Adjust top margin */
+  }
+
+  .profile-image-review img {
+    height: 280px; /* Increase height of profile image */
+    width: 280px; /* Increase width of profile image */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .review-container {
+    width: 60%; /* Adjust width of the review container */
+  }
+
+  .main-content-review {
+    font-size: 18px; /* Increase font size of main content */
+  }
+
+  .reviewer-name {
+    font-size: 22px; /* Increase font size of reviewer name */
+    margin-top: 5px; /* Adjust top margin */
+  }
+
+  .profile-image-review img {
+    height: 300px; /* Increase height of profile image */
+    width: 300px; /* Increase width of profile image */
+  }
+}

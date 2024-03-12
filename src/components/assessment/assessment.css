@@ -22,7 +22,7 @@
 }
 .content p:nth-child(1) {
   font-size: 1.5em;
-  
+
   line-height: 20px;
   font-family: Readex Pro, sans-serif;
   margin-left: 2px;
@@ -48,7 +48,6 @@
   padding: 9px 8px;
   font-size: 16px;
   background-color: #ff4955;
-  /* Example button color */
   color: white;
   border: none;
   cursor: pointer;
@@ -83,18 +82,18 @@
     color: rgb(55, 55, 55);
     font-weight: 400;
     line-height: 20px;
+    font-size: 14px;
   }
   .btnClass {
     display: grid;
-    grid-template-columns: 200px 140px;
+    grid-template-columns: 150px 120px;
     column-gap: 20px;
   }
   .button {
-    margin-top: 20px; /* Adjust margin as needed */
+    margin-top: 28px; /* Adjust margin as needed */
     padding: 9px 8px;
-    font-size: 16px;
+    font-size: 12px;
     background-color: #ff4955;
-    /* Example button color */
     color: white;
     border: none;
     cursor: pointer;
